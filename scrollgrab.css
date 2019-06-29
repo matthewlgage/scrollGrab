@@ -1,0 +1,79 @@
+.scrollgrab {
+    position: relative;
+    padding-right: 16px;
+    scrollbar-width: none;
+    overflow: hidden;
+    -ms-overflow-style: none;
+    outline: none;
+}
+
+.scrollgrab::-webkit-scrollbar { display: none }
+
+.scrollgrab .scrollgrab-scrollbar {
+    position: absolute;
+    top: 0; right: 0; bottom: 0;
+    width: 16px;
+    transition: opactiy .3s;
+    -webkit-transition: opacity .3s;
+}
+
+.scrollgrab .scrollgrab-content {
+    position: absolute;
+    top: 0; left: 0; right: 16px; bottom: 0;
+}
+
+.scrollgrab .scrollgrab-scrollbar.auto-hide { opacity: 0 }
+.scrollgrab .scrollgrab-scrollbar.buttons { padding: 1em 0 }
+
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-up,
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-down {
+    position: absolute;
+    left: 0; right: 0;
+    width: 100%;
+    outline: 0;
+    height: 20px;
+    background: transparent;
+    border: none;
+}
+
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-up { top: 0 }
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-down { bottom: 0 }
+
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-up:after {
+    position: absolute;
+    content: '\25B2'; 
+    top: 2px; left: 50%;
+    transform: translateX(-50%);
+}
+
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-down:after {
+    position: absolute;
+    content: '\25BC'; 
+    bottom: 2px; left: 50%;
+    transform: translateX(-50%);
+}
+
+.scrollgrab .scrollgrab-scrollbar .scrollgrab-scrollbar-tab {
+    position: absolute;
+    display: block;
+    left: 0; right: 0;
+    height: 50px;
+    border-radius: 15px;
+    transition: background .15s;
+    -webkit-transition: background .3s;
+}
+
+.scrollgrab .scrollgrab-scrollbar.light { background: #ddd }
+.scrollgrab .scrollgrab-scrollbar.light .scrollgrab-scrollbar-tab { background: #b3b3b3 }
+.scrollgrab .scrollgrab-scrollbar.light .scrollgrab-scrollbar-tab:hover { background: #888 }
+.scrollgrab .scrollgrab-scrollbar.light .scrollgrab-scrollbar-tab.focus { background: #333 }
+.scrollgrab .scrollgrab-scrollbar.light .scrollgrab-up:after,
+.scrollgrab .scrollgrab-scrollbar.light .scrollgrab-down:after { color: #333 }
+
+
+.scrollgrab .scrollgrab-scrollbar.dark { background: #888 }
+.scrollgrab .scrollgrab-scrollbar.dark .scrollgrab-scrollbar-tab { background: #ddd }
+.scrollgrab .scrollgrab-scrollbar.dark .scrollgrab-scrollbar-tab:hover { background: #ccc }
+.scrollgrab .scrollgrab-scrollbar.dark .scrollgrab-scrollbar-tab.focus { background: #333 }
+.scrollgrab .scrollgrab-scrollbar.dark .scrollgrab-up:after,
+.scrollgrab .scrollgrab-scrollbar.dark .scrollgrab-down:after { color: #ddd }
